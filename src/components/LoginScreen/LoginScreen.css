@@ -1,0 +1,82 @@
+.Login---Web {
+    display: flex;
+    width: 639px;
+    height: 633px;
+    padding: 63px 127px 99px 122px;
+    background-color: #f6f7f8;
+  }
+
+  .Login__Wrapper {
+    width: 390px;
+    height: 471px;
+    padding: 35px 30px 63px;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+
+  img.Group {
+    width: 40px;
+    height: 32px;
+    margin: 0 290px 25px 0;
+    object-fit: contain;
+  }
+
+  .Welcome-back {
+    width: 162px;
+    height: 28px;
+    margin: 25px 168px 6px 0;
+    font-family: MarkPro;
+    font-size: 22px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--dark-blue-grey);
+  }
+
+  .Log-in-to-continue {
+    width: 144px;
+    height: 20px;
+    margin: 6px 186px 43px 0;
+    font-family: MarkPro;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #a1a4ad;
+  }
+
+  .Line {
+    width: 330px;
+    height: 1px;
+    margin: 10px 0 29px;
+    border: solid 1px #4a77e5;
+  }
+
+  .Dont-have-an-accoun {
+    width: 218px;
+    height: 18px;
+    margin: 22px 112px 52px 0;
+    font-family: MarkPro;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--dark-blue-grey);
+  }
+
+  .LoginButton {
+    width: 330px;
+    height: 36px;
+    margin: 52px 0 0;
+    padding: 8px 141px;
+    border-radius: 4px;
+    border: solid 1px #4a77e5;
+    background-color: #4a77e5;
+  }
