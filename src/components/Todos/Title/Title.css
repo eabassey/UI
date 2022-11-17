@@ -1,0 +1,25 @@
+.Todo-List {
+    width: 100px;
+    height: 28px;
+    margin: 25px 72.5px 35px 0.5px;
+    font-family: MarkPro;
+    font-size: 22px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--dark-blue-grey);
+  }
+
+  .Text-Style {
+    font-family: MarkPro;
+    font-size: 22px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--dark-blue-grey);
+  }

@@ -1,0 +1,30 @@
+
+.Add-a-new-todo {
+    width: 123px;
+    height: 20px;
+    margin: 35px 50px 10px 0;
+    font-family: MarkPro;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--cool-grey);
+  }
+
+input {
+    border:0;
+    outline:0;
+}
+input:focus {
+    outline:none!important;
+}
+
+
+  .Line-Copy {
+    width: 380px;
+    height: 1px;
+    margin: 10px 0 26px;
+    border: solid 1px var(--silver);
+  }
