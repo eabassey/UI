@@ -1,10 +1,12 @@
 import create from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
+import { Todo } from '../models/Todo';
 
 
 interface State {
     user: any;
     error: any;
+    todos: Todo[];
     login: (email: string, password: string) => any;
     logout: () => Promise<void>;
 }
@@ -15,7 +17,10 @@ export const useStore = create<State>()(
             (set) => ({
                 user: null,
                 error: null,
-
+                todos: [
+                    {id: 1, title: 'eating', completed: false},
+                    {id: 2, title: 'Going to church', completed: false},
+                ],
                 
                 //
                 login: async (email: string, password: string) => {

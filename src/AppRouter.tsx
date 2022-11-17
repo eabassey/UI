@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { LoginScreen } from './components/LoginScreen/LoginScreen';
-import { TodoApp } from './components/Todos';
+import { TodoApp } from './components/TodoApp';
 import { PrivateRouteGuard } from './guards/PrivateRouteGuard';
 import { PublicRouteGuard } from './guards/PublicRouteGuard';
 
