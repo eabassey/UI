@@ -1,4 +1,6 @@
-.Rectangle {
+.TodosContainer {
+  /* display: flex; */
+  /* flex-direction: column; */
     width: 440px;
     height: 437px;
     margin: 109px 376px 0 0;

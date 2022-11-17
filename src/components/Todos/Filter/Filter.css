@@ -1,0 +1,55 @@
+.Show {
+    width: 42px;
+    height: 18px;
+    margin: 50px 17px 0 0;
+    font-family: MarkPro;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(31, 42, 75, 0.59);
+  }
+
+  .All {
+    width: 18px;
+    height: 18px;
+    margin: 50px 10px 0 17px;
+    font-family: MarkPro;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--dark-blue-grey);
+  }
+
+  .Completed {
+    width: 76px;
+    height: 18px;
+    margin: 50px 10px 0;
+    font-family: MarkPro;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a77e5;
+  }
+
+  .Incompleted {
+    width: 85px;
+    height: 18px;
+    margin: 50px 109px 0 10px;
+    font-family: MarkPro;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a77e5;
+  }
