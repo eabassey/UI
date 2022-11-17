@@ -10,4 +10,5 @@
     line-height: normal;
     letter-spacing: normal;
     color: var(--dark-blue-grey);
+    cursor: pointer;
   }
