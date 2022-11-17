@@ -31,7 +31,7 @@ export const LoginScreen = () => {
                     <div className="Line"></div>
                     </div>
                     <div>
-                    <input {...register('password', {required: true})} placeholder='Password'/>
+                    <input type="password" {...register('password', {required: true})} placeholder='Password'/>
                     <div className="Line"></div>
                     </div>
                     <span className="Dont-have-an-accoun">

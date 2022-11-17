@@ -1,4 +1,6 @@
 
+import { useEffect } from 'react';
+import { useStore } from '../../../hooks/useStore';
 import { Filter } from '../Filter/Filter';
 import { Logo } from '../Logo/Logo';
 import { TextInput } from '../TextInput/TextInput';
@@ -8,15 +10,21 @@ import './TodosContainer.css';
 
 
 export const TodosContainer = () => {
+    const listTodos = useStore(state => state.listTodos);
+    const todos = useStore(state => state.todos);
+
+    useEffect(() => {
+        listTodos();
+    }, []);
 
     return (
         <div className="TodosContainer">
             <Logo />
             <Title />
             <TextInput />
-            <TodoItem title="Make a todo list" />
-            <TodoItem title="Make a todo list" />
-            <TodoItem title="Make a todo list" />
+            {todos.map((todo) => (
+                <TodoItem key={todo.id} todo={todo} />
+            ))}
             <Filter />
         </div>
     );
