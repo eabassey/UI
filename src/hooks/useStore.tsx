@@ -28,7 +28,7 @@ export const useStore = create<State>()(
                 //
                 login: async (email: string, password: string) => {
                     try {
-                        const res = await fetch('http://localhost:3000/api/login', {
+                        const res = await fetch(`${import.meta.env.VITE_API_URI}/api/login`, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ export const useStore = create<State>()(
 
                 signup: async (name: string, email: string, password: string) => {
                     try {
-                        const res = await fetch('http://localhost:3000/api/signup', {
+                        const res = await fetch(`${import.meta.env.VITE_API_URI}/api/signup`, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
@@ -108,7 +108,7 @@ export const useStore = create<State>()(
                     try {
                         const user = localStorage.getItem('user') || '{}';
                         const token = JSON.parse(user)?.token; 
-                        const res = await fetch('http://localhost:3000/api/todos', {
+                        const res = await fetch(`${import.meta.env.VITE_API_URI}/api/todos`, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ export const useStore = create<State>()(
                     try {
                         const user = localStorage.getItem('user') || '{}';
                         const token = JSON.parse(user)?.token; 
-                        const res = await fetch(`http://localhost:3000/api/todos/${id}`, {
+                        const res = await fetch(`${import.meta.env.VITE_API_URI}/api/todos/${id}`, {
                             method: 'DELETE',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -155,7 +155,7 @@ export const useStore = create<State>()(
                     try {
                         const user = localStorage.getItem('user') || '{}';
                         const token = JSON.parse(user)?.token; 
-                        const res = await fetch(`http://localhost:3000/api/todos/${id}`, {
+                        const res = await fetch(`${import.meta.env.VITE_API_URI}/api/todos/${id}`, {
                             method: 'PATCH',
                             headers: {
                                 'Content-Type': 'application/json',

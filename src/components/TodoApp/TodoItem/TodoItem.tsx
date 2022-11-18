@@ -8,7 +8,6 @@ export const TodoItem = ({todo}: { todo: Todo}) => {
     const markTodo = useStore(state => state.markTodo);
 
     const onChange = (ev: any) => {
-        console.log(ev.target.checked);
         markTodo(todo.id, ev.target.checked);
     }
 
