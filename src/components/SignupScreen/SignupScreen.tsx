@@ -11,7 +11,6 @@ export const SignupScreen = () => {
     const signup = useStore(state => state.signup)
     
     const onSubmit = ({name, email, password}: any) => {
-        console.log({email, password});
         signup(name, email, password).then((user: any) => {
             navigate('/todos');
         })

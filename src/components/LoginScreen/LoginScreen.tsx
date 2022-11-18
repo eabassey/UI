@@ -9,7 +9,6 @@ export const LoginScreen = () => {
     const navigate = useNavigate();
     const login = useStore(state => state.login)
     const onSubmit = ({email, password}: any) => {
-        console.log({email, password});
         login(email, password).then((user: any) => {
             navigate('/todos');
         })

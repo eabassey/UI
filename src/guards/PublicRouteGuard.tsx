@@ -8,7 +8,6 @@ export const PublicRouteGuard = ({children, path}: any) => {
     const navigate = useNavigate();
     
     useEffect(() => {
-        console.log({pathname: location.pathname});
         const pathname = location.pathname;
         if (access_token && pathname === path) {
             navigate(-1);
