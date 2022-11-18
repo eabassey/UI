@@ -73,9 +73,12 @@ export const useStore = create<State>()(
                         });
                         const data = await res.json();
                         if (res.status === 200 || res.status === 201) {
-                            
+                            localStorage.setItem('user', JSON.stringify(data));
+                            set({ user: data, error: null});
+                            return data;
                         } else {
                             set({error: data, user: null});
+                            return null;
                         }
                     } catch (error) {
                         set({ error, user: null })
