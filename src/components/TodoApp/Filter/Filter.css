@@ -23,7 +23,7 @@
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: var(--dark-blue-grey);
+    cursor: pointer;
   }
 
   .Completed {
@@ -37,7 +37,7 @@
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #4a77e5;
+    cursor: pointer;
   }
 
   .Incompleted {
@@ -51,5 +51,5 @@
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #4a77e5;
+    cursor: pointer;
   }

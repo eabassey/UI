@@ -1,8 +1,13 @@
 .Sign-Up---Web {
-    width: 639px;
-    height: 633px;
-    padding: 33px 127px 70px 122px;
-    background-color: #f6f7f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10% auto;
+  /* height: 100%; */
+  /* width: 639px;
+  height: 633px; */
+  /* padding: 63px 127px 99px 122px; */
+  /* background-color: #f6f7f8; */
   }
 
   .Sign-up__Wrapper {

@@ -2,6 +2,7 @@ import create from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { Todo } from '../models/Todo';
 import produce from 'immer';
+import { FilterBy } from '../models/FilterBy';
 
 interface State {
     user: any;
@@ -10,7 +11,7 @@ interface State {
     login: (email: string, password: string) => any;
     logout: () => Promise<void>;
     signup: (name: string, email: string, password: string) => Promise<void>;
-    listTodos: () => Promise<void>;
+    listTodos: (filterBy?: FilterBy) => Promise<void>;
     createTodo: (title: string) => Promise<void>;
     deleteTodo: (id: number) => Promise<void>;
     markTodo: (id: number, completed: boolean) => Promise<void>;
@@ -19,7 +20,7 @@ interface State {
 export const useStore = create<State>()(
     devtools(
         // persist(
-            (set,) => ({
+            (set) => ({
                 user: JSON.parse(localStorage.getItem('user') || '{}'),
                 error: null,
                 todos: [],
@@ -81,11 +82,11 @@ export const useStore = create<State>()(
                     }
                 },
 
-                listTodos: async() => {
+                listTodos: async(filterBy: FilterBy = 'all') => {
                     try {
                         const user = localStorage.getItem('user') || '{}';
                         const token = JSON.parse(user)?.token; 
-                        const res = await fetch('http://localhost:3000/api/todos', {
+                        const res = await fetch(`http://localhost:3000/api/todos?filterBy=${filterBy}`, {
                             method: 'GET',
                                 headers: {
                                     'Content-Type': 'application/json',

@@ -1,4 +1,5 @@
 .Todos---Web {
+  display: flex;
     width: 1343px;
     height: 803px;
     padding: 14px 10px 225px 468px;

@@ -14,12 +14,8 @@ export const TextInput = () => {
     }
     return (
         <div>
-        
-
-        <input type="text" onKeyDown={handleKey} className="Add-a-new-todo" placeholder="Add a new todo" />
-        <div className="Line-Copy"></div>
-
-
+            <input type="text" onKeyDown={handleKey} className="Add-a-new-todo" placeholder="Add a new todo" />
+            <div className="Line-Copy"></div>
         </div>
     );
 }

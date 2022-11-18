@@ -25,6 +25,6 @@ input:focus {
   .Line-Copy {
     width: 380px;
     height: 1px;
-    margin: 10px 0 26px;
+    margin: 5px 0 26px;
     border: solid 1px var(--silver);
   }
