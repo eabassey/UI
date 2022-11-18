@@ -9,6 +9,7 @@ interface State {
     todos: Todo[];
     login: (email: string, password: string) => any;
     logout: () => Promise<void>;
+    signup: (name: string, email: string, password: string) => Promise<void>;
     listTodos: () => Promise<void>;
     createTodo: (title: string) => Promise<void>;
     deleteTodo: (id: number) => Promise<void>;
@@ -18,8 +19,8 @@ interface State {
 export const useStore = create<State>()(
     devtools(
         // persist(
-            (set) => ({
-                user: null,
+            (set,) => ({
+                user: JSON.parse(localStorage.getItem('user') || '{}'),
                 error: null,
                 todos: [],
                 
@@ -28,9 +29,6 @@ export const useStore = create<State>()(
                     try {
                         const res = await fetch('http://localhost:3000/api/login', {
                             method: 'POST',
-                            // headers: {
-                            //     authorization: `Bearer ${localStorage.getItem('jwt_access_token')}`  
-                            // },
                             headers: {
                                 'Content-Type': 'application/json'
                             },
@@ -57,6 +55,30 @@ export const useStore = create<State>()(
                     localStorage.removeItem('user');
                     localStorage.removeItem('foodstyles-storage');
                     set({ user: null, error: null});
+                },
+
+                signup: async (name: string, email: string, password: string) => {
+                    try {
+                        const res = await fetch('http://localhost:3000/api/signup', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                name: name.trim(),
+                                email: email.trim(),
+                                password: password.trim(),
+                            })
+                        });
+                        const data = await res.json();
+                        if (res.status === 200 || res.status === 201) {
+                            
+                        } else {
+                            set({error: data, user: null});
+                        }
+                    } catch (error) {
+                        set({ error, user: null })
+                    }
                 },
 
                 listTodos: async() => {

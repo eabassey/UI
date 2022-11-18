@@ -7,13 +7,15 @@ import './Logout.css';
 export const Logout = () => {
     const navigate = useNavigate();
     const logout = useStore(state => state.logout);
+    const user = useStore(state => state.user);
+
     return (
         <span 
         className="Logout" 
         onClick={() => {
             logout().then(() => navigate('/login'))
         }}>
-            Logout
+        Welcome {user?.name}, Logout
         </span>
     )
 }

@@ -1,31 +1,37 @@
-import './LoginScreen.css';
+import './SignupScreen.css';
 import Logo from '../../assets/img/group.svg';
 import { useForm } from 'react-hook-form';
 import { useStore } from '../../hooks/useStore';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
-export const LoginScreen = () => {
+export const SignupScreen = () => {
     const { register, handleSubmit, formState: {isValid}} = useForm();
     const navigate = useNavigate();
-    const login = useStore(state => state.login)
-    const onSubmit = ({email, password}: any) => {
+
+    const signup = useStore(state => state.signup)
+    
+    const onSubmit = ({name, email, password}: any) => {
         console.log({email, password});
-        login(email, password).then((user: any) => {
+        signup(name, email, password).then((user: any) => {
             navigate('/todos');
         })
     }
     return (
-        <div className="Login---Web">
-            <div className="Login__Wrapper">
+        <div className="Sign-Up---Web">
+            <div className="Sign-up__Wrapper">
                 <img src={Logo} className="Group" />
 
-                <span className="Welcome-back Text-Style">
-                    Welcome back!
+                <span className="Welcome Text-Style">
+                    Welcome!
                 </span>
-                <div className="Log-in-to-continue">
-                    Log in to continue.
+                <div className="Sign-up-to-start-usi">
+                Sign up to start using Simpledo today.
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
+                <div>
+                    <input {...register('name', {required: true})} placeholder='Full Name'/>
+                    <div className="Line"></div>
+                    </div>
                     <div>
                     <input {...register('email', {required: true})} placeholder='Email'/>
                     <div className="Line"></div>
@@ -34,12 +40,12 @@ export const LoginScreen = () => {
                     <input type="password" {...register('password', {required: true})} placeholder='Password'/>
                     <div className="Line"></div>
                     </div>
-                    <span className="Dont-have-an-accoun">
-                        <Link to={'/signup'}>
-                            Don’t have an account? Sign up.
+                    <span className="Do-have-an-account">
+                        <Link to={'/login'}>
+                            Do have an account? Sign in.
                         </Link>
                     </span>
-                    <button disabled={!isValid} className='LoginButton' type='submit'>Login</button>
+                    <button disabled={!isValid} className='SignupButton' type='submit'>Sign Up</button>
                 </form>
             </div>
         </div>
